@@ -13,6 +13,7 @@ using NSMB.Entities.Player;
 using NSMB.Extensions;
 using NSMB.Translation;
 using NSMB.Utils;
+using LibSM64;
 
 namespace NSMB.Game {
     public class GameData : NetworkBehaviour, IBeforeTick {
@@ -75,6 +76,8 @@ namespace NSMB.Game {
 
         public override void Spawned() {
             Instance = this;
+            SM64Context context = gameObject.AddComponent<SM64Context>();
+            context.enabled = true;
 
             // By default, spectate. when we get assigned a player object, we disable it there.
             GameManager.spectationManager.Spectating = true;

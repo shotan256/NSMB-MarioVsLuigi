@@ -41,14 +41,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8279152070748857899}
-  - component: {fileID: 8020175873997104482}
   m_Layer: 10
   m_Name: ModelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8279152070748857899
 Transform:
   m_ObjectHideFlags: 0
@@ -71,21 +70,6 @@ Transform:
   m_Father: {fileID: 4824223341387914440}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8020175873997104482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204521008279695374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb46ec3ddc407dd4cafade9981e03a42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
-  _CurrentPosition: {x: 0, y: 0, z: 0}
-  controller: {fileID: 4824223341387914485}
 --- !u!1 &330813882706712469
 GameObject:
   m_ObjectHideFlags: 0
@@ -10483,6 +10467,9 @@ GameObject:
   - component: {fileID: 3452636116809643534}
   - component: {fileID: 453221688236677073}
   - component: {fileID: 2433599474194652050}
+  - component: {fileID: 7206332373348242223}
+  - component: {fileID: 6536456765390537273}
+  - component: {fileID: 6800332248005307502}
   m_Layer: 10
   m_Name: PlayerMario
   m_TagString: Player
@@ -10619,10 +10606,9 @@ MonoBehaviour:
   _IsInShell:
     _value: 0
   _FrozenCube: {fileID: 0}
-  fadeOut: {fileID: 0}
   sfxBrick: {fileID: 3452636116809643534}
   networkRigidbody: {fileID: 2433599474194652050}
-  cameraController: {fileID: 8020175873997104482}
+  cameraController: {fileID: 0}
   animationController: {fileID: 79918617084146557}
   flyingGravity: 0.8
   flyingTerminalVelocity: 1.40625
@@ -11015,7 +11001,8 @@ MonoBehaviour:
   - {fileID: 4824223341387914485}
   - {fileID: 79918617084146557}
   - {fileID: 2433599474194652050}
-  - {fileID: 8020175873997104482}
+  - {fileID: 7206332373348242223}
+  - {fileID: 6800332248005307502}
   SimulationBehaviours:
   - {fileID: 4824223341387914442}
 --- !u!114 &2433599474194652050
@@ -11046,6 +11033,48 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   UseLegacySharedModeInterpolation: 0
   TargetInterpolationDelay: 0.03
+--- !u!114 &7206332373348242223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824223341387914446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31bc207218a3e604aff01c14f053e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  material: {fileID: 2100000, guid: 3690ad1c65f76a347ab0fce02fd764ea, type: 2}
+--- !u!114 &6536456765390537273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824223341387914446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c46eb251cb46d14bac3770d591990a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 4824223341387914485}
+--- !u!114 &6800332248005307502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824223341387914446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb46ec3ddc407dd4cafade9981e03a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
+  _CurrentPosition: {x: 0, y: 0, z: 0}
+  controller: {fileID: 4824223341387914485}
 --- !u!1 &4824223342336871188
 GameObject:
   m_ObjectHideFlags: 0

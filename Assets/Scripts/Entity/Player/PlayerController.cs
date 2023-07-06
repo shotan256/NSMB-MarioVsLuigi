@@ -15,6 +15,8 @@ using NSMB.Extensions;
 using NSMB.Game;
 using NSMB.Tiles;
 using NSMB.Utils;
+using UnityEngine.EventSystems;
+using LibSM64;
 
 namespace NSMB.Entities.Player {
     public class PlayerController : FreezableEntity, IPlayerInteractable, IBeforeTick {
@@ -461,30 +463,30 @@ namespace NSMB.Entities.Player {
                 groundpoundLastFrame = IsGroundpounding;
 
                 //HandleBlockSnapping();
-                CheckForEntityCollision();
+                //CheckForEntityCollision();
 
-                if (!IsDead) {
-                    HandleGroundCollision();
-                    if (IsOnGround)
-                        IgnoreCoyoteTime = false;
+                //if (!IsDead) {
+                //    HandleGroundCollision();
+                //    if (IsOnGround)
+                //        IgnoreCoyoteTime = false;
 
-                    if (previousTickIsOnGround) {
-                        if (!IsOnGround) {
-                            IsOnGround = GroundSnapCheck();
-                        }
+                //    if (previousTickIsOnGround) {
+                //        if (!IsOnGround) {
+                //            IsOnGround = GroundSnapCheck();
+                //        }
 
-                        if (!IsOnGround) {
-                            if (!IgnoreCoyoteTime)
-                                CoyoteTime = Runner.SimulationTime + 0.05f;
+                //        if (!IsOnGround) {
+                //            if (!IgnoreCoyoteTime)
+                //                CoyoteTime = Runner.SimulationTime + 0.05f;
 
-                            IgnoreCoyoteTime = false;
-                        }
-                    }
+                //            IgnoreCoyoteTime = false;
+                //        }
+                //    }
 
-                    UpdateTileProperties();
-                    CheckForPowerupActions(pressedButtons);
-                    HandleMovement(heldButtons, pressedButtons);
-                }
+                //    UpdateTileProperties();
+                //    CheckForPowerupActions(pressedButtons);
+                //    HandleMovement(heldButtons, pressedButtons);
+                //}
 
                 PreviousInputs = input;
             }
@@ -1265,7 +1267,13 @@ namespace NSMB.Entities.Player {
             body.velocity = Vector2.zero;
         }
 
+        bool initialized = false;
         public void Respawn() {
+
+            if (!initialized) {
+                GetComponent<SM64Mario>().Init();
+                initialized = true;
+            }
 
             //gameObject.SetActive(true);
             IsDead = false;

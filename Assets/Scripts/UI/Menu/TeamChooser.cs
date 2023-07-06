@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 using NSMB.Extensions;
+using Fusion;
 
 public class TeamChooser : MonoBehaviour {
 
@@ -79,6 +80,7 @@ public class TeamChooser : MonoBehaviour {
 
     private void OnColorblindModeChanged() {
         if (!button.interactable) return;
+        if (!NetworkHandler.Runner || !NetworkHandler.Runner.GetLocalPlayerData()) return;
 
         int selected = NetworkHandler.Runner.GetLocalPlayerData().Team % 5;
         Team teamScriptable = ScriptableManager.Instance.teams[selected];

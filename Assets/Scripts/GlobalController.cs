@@ -55,6 +55,7 @@ public class GlobalController : Singleton<GlobalController> {
             if (Settings.Instance.audioMuteMusicOnUnfocus) mixer.SetFloat("MusicVolume", -80f);
             if (Settings.Instance.audioMuteSFXOnUnfocus) mixer.SetFloat("SoundVolume", -80f);
         }
+        ControlSystem.controls.asset.Enable();
         ControlSystem.controls.Debug.FPSMonitor.performed += (context) => {
             graphy.SetActive(!graphy.activeSelf);
         };

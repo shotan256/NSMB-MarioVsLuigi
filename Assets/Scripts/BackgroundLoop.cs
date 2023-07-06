@@ -9,7 +9,7 @@ public class BackgroundLoop : MonoBehaviour {
 
     //---Static Variables
     public static BackgroundLoop Instance { get; private set; }
-    private static readonly Vector2 ScreenBounds = new(7.5f, 5f);
+    private static readonly Vector2 ScreenBounds = new(15f, 10f);
 
     //---Misc Variables
     private GameObject[] children;
@@ -78,6 +78,7 @@ public class BackgroundLoop : MonoBehaviour {
             GameObject c = Instantiate(clone);
             c.transform.SetParent(obj.transform);
             c.transform.position = new Vector3(objectWidth * i, obj.transform.position.y, obj.transform.position.z);
+            c.transform.localScale = Vector3.one * 1;
             c.name = obj.name + i;
         }
         Destroy(clone);
