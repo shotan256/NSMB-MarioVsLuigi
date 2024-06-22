@@ -33,8 +33,8 @@ public class BulletBillLauncher : MonoBehaviourPun {
             if (bills[i] == null)
                 bills.RemoveAt(i--);
         }
-        if (bills.Count >= 3)
-            return;
+        //if (bills.Count >= 3)
+        //    return;
 
         //Check for players close by
         if (IntersectsPlayer(transform.position + Vector3.down * 0.25f, closeSearchBox))
