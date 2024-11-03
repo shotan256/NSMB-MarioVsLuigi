@@ -10,23 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9aca9efef55f6a45a53ffcbd56a57cb, type: 3}
-  m_Name: FireFlowerTile
+  m_Name: 1UP
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
   - {fileID: 6088895996261290297, guid: f4b7221be8b79c94c9c8919163014cb0, type: 3}
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  - {fileID: 6700115880502462848, guid: f4b7221be8b79c94c9c8919163014cb0, type: 3}
+  - {fileID: 4366118933763392549, guid: f4b7221be8b79c94c9c8919163014cb0, type: 3}
+  - {fileID: 5563996254464901877, guid: f4b7221be8b79c94c9c8919163014cb0, type: 3}
+  - {fileID: 6088895996261290297, guid: f4b7221be8b79c94c9c8919163014cb0, type: 3}
+  m_MinSpeed: 8
+  m_MaxSpeed: 8
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 2
-  particleColor: {r: 0, g: 0, b: 0, a: 0}
+  particleColor: {r: 0.14117648, g: 0.47450984, b: 0.69411767, a: 0}
   breakableBySmallMario: 0
   breakableByLargeMario: 0
   breakableByGiantMario: 1
-  breakableByShells: 1
+  breakableByShells: 0
   breakableByBombs: 1
-  bumpIfNotBroken: 1
+  bumpIfNotBroken: 0
   bumpIfBroken: 0
   resultTile: SpecialTiles/EmptyBlueQuestion
-  spawn: FireFlower
-  spawnFixed: 0
+  spawn: 1-Up
+  spawnFixed: 1
