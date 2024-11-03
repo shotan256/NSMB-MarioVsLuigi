@@ -5,6 +5,8 @@ using NSMB.Utils;
 [CreateAssetMenu(fileName = "PowerupTile", menuName = "ScriptableObjects/Tiles/PowerupTile", order = 2)]
 public class PowerupTile : BreakableBrickTile {
     public string resultTile;
+    public string spawn = "FireFlower";
+    public bool spawnFixed = false;
     public override bool Interact(MonoBehaviour interacter, InteractionDirection direction, Vector3 worldLocation) {
         if (base.Interact(interacter, direction, worldLocation))
             return true;
@@ -31,7 +33,7 @@ public class PowerupTile : BreakableBrickTile {
                 return true;
             }
 
-            spawnResult = player.state <= Enums.PowerupState.Small ? "Mushroom" : "FireFlower";
+            spawnResult = (player.state <= Enums.PowerupState.Small && !spawnFixed) ? "Mushroom" : spawn;
         }
 
         Bump(interacter, direction, worldLocation);

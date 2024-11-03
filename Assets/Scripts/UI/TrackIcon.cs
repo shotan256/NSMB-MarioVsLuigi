@@ -8,6 +8,7 @@ public class TrackIcon : MonoBehaviour {
     public bool doAnimation;
     public Sprite starSprite;
 
+
     private float flashTimer;
     private PlayerController playerTarget;
     private Material mat;
@@ -59,6 +60,12 @@ public class TrackIcon : MonoBehaviour {
         float levelWidth = gm.GetLevelMaxX() - gm.GetLevelMinX();
         float trackWidth = trackMaxX - trackMinX;
         float percentage = (target.transform.position.x - gm.GetLevelMinX()) / levelWidth;
+        if (gm.isVerticalStage)
+        {
+            levelWidth = gm.GetLevelMaxY() - gm.GetLevelMinY();
+            trackWidth = trackMaxX - trackMinX;
+            percentage = Mathf.Max(0,Mathf.Min((target.transform.position.y - gm.GetLevelMinY()) / levelWidth,2));
+        }
         transform.localPosition = new(percentage * trackWidth - trackMaxX, transform.localPosition.y);
     }
 }

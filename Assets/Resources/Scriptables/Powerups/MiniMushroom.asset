@@ -16,7 +16,7 @@ MonoBehaviour:
   prefab: MiniMushroom
   soundEffect: 45
   spawnChance: 2
-  losingSpawnBonus: -1
+  losingSpawnBonus: -2
   big: 0
   vertical: 0
   custom: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 8
   prefab: MegaMushroom
   soundEffect: 40
-  spawnChance: -1
+  spawnChance: -2
   losingSpawnBonus: 3
   big: 1
   vertical: 0

@@ -15,8 +15,8 @@ MonoBehaviour:
   state: 7
   prefab: BlueShell
   soundEffect: 16
-  spawnChance: 1.5
-  losingSpawnBonus: -0.25
+  spawnChance: 0
+  losingSpawnBonus: 0.25
   big: 0
   vertical: 0
   custom: 0
